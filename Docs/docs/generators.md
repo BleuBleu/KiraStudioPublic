@@ -132,9 +132,9 @@ This section will not try to explain the concept of FM synthesis here, I will re
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vvBl3YUBUyY?si=y36fsscdkvlV9Fqz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 90%; aspect-ratio: 16/9; display: block; margin: 0 auto;"></iframe>
 
+<br/>
 A little operator diagram representing how the various operators are connected is shown. In the diagram, each box is an operator. Operators connecting to other operators modulate them and are called Modulators. Modulators are directly inaudible, you only hear the effect they have on other operators. Operators outputting to the bottom are called Carriers and contribute to the final audio. Operator 1 will be shown with a line connecting to itself to represent the optional feedback.
 
-<br/>
 ### General Parameters:
 
 * **Algorithm** : Defines how multiple operators are connected, shaping modulation paths and timbre. 
@@ -167,7 +167,7 @@ A generic PCM (Pulse-Coded Modulation) synth. Assign PCM samples to keys of the 
 
 The PCM sampler is one of the few sampler offered in KiraStudio. This one supports playback of 32-bit floating point PCM samples. The sample editing workflow is covered in the [samples section](samples.md) of the documentation.
 
-* **Edit Sample Map** : Press this button to open sample map editor.
+* **Edit Sample Map** : Press this button to open sample map editor. This sample map supports only 32-bit floating point PCM samples.
 
 ## ![](images/GeneratorNoise.png#header) Noise
 
@@ -189,7 +189,6 @@ Here are some examples of earlyfunctions/formulas that Viznut found.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GtQdIYUtAHg?si=jOAqjdWdPKOlkoeU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 90%; aspect-ratio: 16/9; display: block; margin: 0 auto;"></iframe>
 
 <br/>
-
 For a tutorial on how to use the 8-Bit Calculator, please check out this great video from Caustic's 8-Bit Synth, which uses the same idea. 
 
 Please do note that the operator precedence in Caustic is non-standard and you will have to change the Operator Precedence setting (or add extra parentheses) if you want to replicate their results. Also, Caustic supports having 2 formulas at the same time (A/B), you can replicate the same by having 2 generators in KiraStudio.
@@ -197,14 +196,15 @@ Please do note that the operator precedence in Caustic is non-standard and you w
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4K9C3OBCDDc?si=o3oA-EvzsF3casn3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 90%; aspect-ratio: 16/9; display: block; margin: 0 auto;"></iframe>
 
 <br/>
-
 ## ![](images/GeneratorSoundFont.png#header) SoundFont
 
 A generic SoundFont synth supporting both SF2 and SF3 (OGG/Vorbis compressed). 
 
-The synth supports most of the SounfFont features with a few exception. Modulators are only evaluated at key-on, so modulators changing over time or affected by MIDI CCs while the note is playing are currently ignored. There is also currently no way ot provinding inputs to the MIDI CCs at the moment. 
+The synth supports most of the SounfFont features with a few exception:
 
-Chorus/reverb effects are purposely ignored since you can add those effect yourself in KiraStudio. 
+* Modulators are only evaluated at key-on, so modulators changing over time or affected by MIDI CCs while the note is playing are currently ignored. This may be improved in the future.
+* There is also currently no way to provide inputs to the MIDI CCs at the moment. This may be improved in the future.
+* Chorus/reverb effects are purposely ignored since you can add those effect yourself in KiraStudio. 
 
 A built-in SF3 version of the [GeneralUser-GS by S. Christian Collins](https://www.schristiancollins.com/generaluser) is provided. Please go and support their amazing work.
 
@@ -213,7 +213,9 @@ A built-in SF3 version of the [GeneralUser-GS by S. Christian Collins](https://w
 
 # Yamaha Generators
 
-This section will cover the various Yamaha chips that are supported by the app. Please note that a lot of the parameters are a bit obscure if you are not versed in FM generation. The ultimate reference for these are the spec sheets, which are easy to find online. If you are new to FM, I would recommend starting with the generic FM generator as it tries to streamline the concept of FM a bit more. 
+This section will cover the various Yamaha chips that are supported by the app. Please note that a lot of the parameters are a bit obscure if you are not versed in FM generation. The ultimate reference for these are the spec sheets, which are easy to find online. 
+
+If you are new to FM, I would recommend starting with the generic FM generator as it tries to streamline the concept of FM a bit more. 
 
 The emulation is done using [ymfm](https://github.com/aaronsgiles/ymfm) which is a fantastic library that emulates pretty much all of the Yamaha chips, please check out their work. 
 
@@ -225,86 +227,209 @@ As mentionned in the intro of this page, emulation accuracy is not perfect in Ki
 
 ## ![](images/GeneratorFM2Op.png#header) YM2413 FM (OPLL)
 
-xxx
+The OPLL is a budget FM chip for MSX-Music and Japanese Master System. Provides simple 2-op voices with preset instruments plus one customizable voice. Compact, recognizable "cheap FM" sound. 
+
+Emulation is performed at 3.579545 MHz, which is the same as the OPLL found in the MSX.
+
+On a real YM2413, only a single custom instrument can be used at a given time. In KiraStudio, since each note runs its own emulation, there is no such limitation, every generator can use a custom instrument without fear of creating conflict with other notes or instruments paying at the same time.
+
+General Parameters:
+
+* **Instrument** : Choose between one of the built-in instrument or make a custom one.
+
+Operator Parameters:
+
+* **Attack Rate/Decay Rate/Sustain Level/Release Rate** : Yamaha envelope cannot be visually edited like other generators, they use a fixed function and the ADSR values are not in any specific unit. 
+* **Sustained** : If disabled, ADSR envelope will be in 'percussion mode' and will released immediately after the decay, even if the key is help pressed
+* **Level** : Volume or level of this operator
+* **Frequency Ratio** : The ratio of this operator's frequency compared to the note being played, 2 would be an octave higher
+* **Feedback** : How much this operator's output will be fed back to itself on the next iteration. Low-medium values can make the waveform sound richer, high values can create noise.
+* **Key Rate Scaling** : When enabled, increases the rate at which the envelope of this operator plays based on how high the key is on the piano.
+* **Rectified** : If enabled, the absolute value of the sine waveform will be used
+* **Tremolo** : If enabled, this operator will alter its volume/level using the LFO. On YM2413, the LFO has a fixed frequency and cannot be adjusted.
+* **Vibrato** : If enabled, this operator will alter its pitch using the LFO. On YM2413, the LFO has a fixed frequency and cannot be adjusted.
 
 ## ![](images/GeneratorFM4Op.png#header) YM2612 FM (OPN2)
 
-xxx
+The OPN2 is the flagship FM chip of the Sega Mega Drive/Genesis. Offers expressive 4-operator FM synthesis, with flexible algorithms and warm, crunchy character from its integrated DAC.
+
+Emulation is performed at 7.670454 MHz, which is the same as the OPN2 found in the Mega Drive.
+
+General Parameters:
+
+* **Algorithm** : Defines how multiple operators are connected, shaping modulation paths and timbre. Please see the [Generic FM section](#234-op-fm) for an explanation on how to read the diagram.
+* **Tremolo Amount** : How much the LFO of the generator affects the volume/level of the operators that opt-in the tremolo.
+* **Vibrato Amount** : How much the LFO of the generator affects the pitch of all operators.
+* **LFO** : The frequency (in Hz) of the low frequency oscillator.
+
+Operator Parameters:
+
+* **Attack Rate/Decay Rate/Sustain Level/Release Rate** : Yamaha envelope cannot be visually edited like other generators, they use a fixed function and the ADSR values are not in any specific unit. 
+* **Sustain Rate** : Rate of the sustain in the ADSR envelope of the operator
+* **Level** : Volume or level of this operator
+* **Frequency Ratio** : The ratio of this operator's frequency compared to the note being played, 2 would be an octave higher
+* **Detune** : Extremely fine tuning of the operator's frequency, used to slightly offset the phase of operators
+* **Key Rate Scaling** : When enabled, increases the rate at which the envelope of this operator plays based on how high the key is on the piano.
+* **SSG Envelope** : Leftover SSG envelope generation that can still be used to interesting effect
+* **Tremolo** :If enabled, this operator will alter its volume/level using the LFO (General tab)
+* **Feedback** : How much this operator's output will be fed back to itself on the next iteration. Low-medium values can make the waveform sound richer, high values can create noise.
 
 ## ![](images/GeneratorFM2Op.png#header) YM3812 FM (OPL2)
 
-xxx
+The OPL2 is found in AdLibs and early Sound Blaster cards. Basic 2-operator FM, multiple waveforms, tremolo/vibrato effects, and percussion mode for DOS game music.
+
+Emulation is performed at 3.579545 MHz, which is the same as the OPL2 found in the original Sound Blaster.
+
+General Parameters:
+
+* **Algorithm** : Defines how multiple operators are connected, shaping modulation paths and timbre. Please see the [Generic FM section](#234-op-fm) for an explanation on how to read the diagram.
+* **Tremolo Amount** : Depth of the tremolo for operator(s) that opt-in.
+* **Vibrato Amount** : Depth of the vibrato for operator(s) that opt-in.
+
+Operator Parameters:
+
+* **Attack Rate/Decay Rate/Sustain Level/Release Rate** : Yamaha envelope cannot be visually edited like other generators, they use a fixed function and the ADSR values are not in any specific unit. 
+* **Sustained** : If disabled, ADSR envelope will be in 'percussion mode' and will released immediately after the decay, even if the key is help pressed
+* **Level** : Volume or level of this operator
+* **Frequency Ratio** : The ratio of this operator's frequency compared to the note being played, 2 would be an octave higher
+* **Key Rate Scaling** : When enabled, increases the rate at which the envelope of this operator plays based on how high the key is on the piano.
+* **Key Rate Level** : When enabled, reduces the volume/level of this operator plays based on how high the key is on the piano.
+* **Waveform** : The waveform to use for FM synthesis
+* **Tremolo** : If enabled, this operator will alter its volume/level using the LFO (General tab)
+* **Vibrato** : If enabled, this operator will alter its pitch using the LFO (General tab)
+* **Feedback** : How much this operator's output will be fed back to itself on the next iteration. Low-medium values can make the waveform sound richer, high values can create noise.
 
 ## ![](images/GeneratorFM2Op.png#header) YM262F FM (OPL3)
 
-xxx
+OPL3 is the successor to OPL2, powering Sound Blaster 16 and others. Offers stereo panning, extra waveforms, and 4-operator voices, defining rich DOS-era soundtracks.
+
+Emulation is also performed at 3.579545 MHz, which is the same as the OPL3 found in the Sound Blaster 16. While this chip could run in both 2-OP and 4-OP mode, KiraStudio only offers the 4-OP mode.
+
+Parameters are extremely similar to [OPL2](#ym3812-fm-opl2), but with 4 operators.
 
 ## ![](images/GeneratorSquare.png#header) YM2149 SSG
 
-xxx
+A YM2149 Software-controlled Sound Generator channel with tone, noise and envelope support. Widely used in 1980s computers and consoles like Atari ST. Similar to the various AY chips. Tone and noise features can be enabled individually or combined together.
+
+Emulation is also performed at 2.0 MHz, which is the same as the YM2149 found in the Atari ST. The real chip which share its envelope across all 3 voices. In KiraStudio, this isnt a concern since each note only emulates 1 single voice for each note. You can use hardware envelopes without having to worry about interferences.
+
+* **Mixer** : Controls if tone, noise or both are enabled. 
+* **Noise Frequency** : Frequency of the noise.
+* **Envelope Shape** : SSG envelopes can be used for attack, looping ones can be used to generate waveforms like saws.
+* **Envelope Auto-Frequency** : When enabled, the frequency of the SSG envelope will be driven by the frequency of the playing, otherwise it needs to be specified manually.
+* **Envelope Auto-Frequency Octave** : Octave of the SSG envelope frequency, relative to the octave of the note playing.
+* **Envelope Manual Period** : Manual frequency of the SSG envelope. 
 
 ## ![](images/GeneratorSample.png#header) YM2610 Sample (OPNA)
 
-xxx
+OPNA ADPCM A/B channel. This only has the sample playback capabilities without any FM or SSG. It can be used to play arbitrary samples, or load the famous 6 percussion sound that were available on some ROMs.
+
+Emulation is also performed at 8.0 MHz, which is the typical clock for Yamaha chip that supported sample playback.
+
+* **Edit Sample Map** : Press this button to open sample map editor. This sample map supports both ADPCM A and B format samples. 
 
 # Famicom/NES Generators
 
-This section will cover the various Famicom/NES generators and their parameters. 
+This section will cover the various Famicom/NES generators and their parameters. This section assume some knowledge of the NES/Famicom and its various audio expansions.
+
+A few notes on the emulation accuracy in regards to the NES:
+
+* Unless specified, all NES emulation is performed at 1.789773 MHz, which is the NTSC frequency of the original NES/Famicom. 
+
+* Since channels are emulated separately, all cross-channels effects such as the mixing between the 2 square channels or the interactions between the noise/triangle/DPCM channels are not emulated.
+
+* Whenever a new note is triggered, the phase of channel is resetted if that channel supports phase resets. On real hardware, this would need to be done manually, but KiraStudio does in for every note. More control over phase may be added in the future.
 
 ## ![](images/GeneratorSquare.png#header) NES Square
 
-xxx
+A NES/Famicom 2A03 pulse channel. Produces a rich pulse wave with variable duty cycle and pitch, ideal for melodies. Period is 11-bit and volume is 4-bit. 
+
+* **Duty** : The percentage of time the pulse waveform is kept high.
+* **Prevent Popping** : Work around the phase reset that occurs between certain notes on the NES/Famicom using HW sweeps.
 
 ## ![](images/GeneratorTriangle.png#header) NES Triangle
 
-xxx
+A NES/Famicom 2A03 triangle channel. Generates a stepped triangle wave, often used for basslines or percussion. Period is 11-bit and it has no volume control. Of course, you can cheat by adjusting the volume on the channel, on later down the effect chain. 
 
 ## ![](images/GeneratorNoise.png#header) NES Noise
 
-xxx
+A NES/Famicom 2A03 noise channel. Produces 16 different white noise tone, perfect for creating drum sounds and sound effects. It also has a couple of extra modes to make it sound more metallic. 
+
+* **Mode** : Affects how the noise RNG works. On real hardware, you would not be able to explicitely choose between long/short modes.
 
 ## ![](images/GeneratorSample.png#header) NES 1-Bit DPCM
 
-xxx
+A NES/Famicom 2A03 1-bit DPCM channel. Assign DPCM samples to keys of the piano and use them in your songs. Samples can be pitched down with a fixed set of 16 frequencies (NTSC only) and may not always sound in-tune. 
+
+* **Edit Sample Map** : Press this button to open sample map editor. This sample map supports only 1-bit DPCM samples.
 
 ## ![](images/GeneratorSample.png#header) NES 7-Bit PCM
 
-xxx
+A NES/Famicom 2A03 7-bit PCM channel. Samples can be pitched down and slightly up and may not always sound in-tune when pitched. 
+
+* **Edit Sample Map** : Press this button to open sample map editor. This sample map supports only 7-bit PCM samples.
 
 ## ![](images/GeneratorWaveTable.png#header) NES Famicom Disk System
 
-xxx
+A Famicom Disk System wavetable channel with adjustable waveform and modulation table, enabling richer tones, vibrato effects, and complex evolving timbres beyond standard NES audio.
+
+* **Edit WaveTable** : Opens the wavetable editor. The FDS wavetable had a fixed size. Multi-wave is currently not supported by may be added in the future if there is demand for it.
+* **Modulation Table** : The FDS could modulate the wavetable by a modulation table. This table has a fixed length.
+* **Modulation Depth** : Depth of the modulation, how strong it affects the phase of the wavetable
+* **Auto Modulation** : When enabled, modulation speed will be ratio of the frequency of the playing note, otherwise manually set
+* **Auto Modulation Octave** : Speed of the modulation relative to the frequency of the note (+1 octave = 2x the frequency).
+* **Manual Modulation Speed** : Manually sets the modulation speed
 
 ## ![](images/GeneratorSquare.png#header) NES VRC6 Square
 
-xxx
+A Konami VRC6 pulse channel. With its 12-bit period and additional duty cycles, it is more expressive than standard NES squares and does not suffer from any phase reset issues.
+
+* **Duty** : The percentage of time the pulse waveform is kept high.
 
 ## ![](images/GeneratorSaw.png#header) NES VRC6 Saw
 
-xxx
+A Konami VRC6 saw channel. Generates a distinctive 7-step sawtooth wave, ideal for rich basslines and buzzy leads uncommon on standard NES hardware.
 
 ## ![](images/GeneratorFM2Op.png#header) NES VRC7
 
-xxx
+A Konami VRC7 FM channel based on the Yamaha YM2413, capable of producing rich, metallic, and expressive tones resembling real instruments and complex synth textures. 
+
+Besides the list of instrument being slightly different, all parameters are identical to the [YM2143](#ym2413-fm-opll).
 
 ## ![](images/GeneratorSquare.png#header) NES Sunsoft 5B
 
-xxx
+A Sunsoft 5B channel based on the Yamaha YM2149, capable of generating both tone and noise, enabling versatile melodic and percussive sound design.
+
+The parameters are identical the the [YM2149](#ym2149-ssg), but emulation is performed at the NES frequency (1.789773 MHz), which is slightly lower that the YM2149 generator. This may lead to some notes sounding slightly more out of tune.
 
 ## ![](images/GeneratorWaveTable.png#header) NES Namco 163
 
-xxx
+A Namco 163 wavetable channel capable of custom 4-bit waveforms, enabling rich, evolving timbres and complex polyphonic textures uncommon in other Famicom expansions.
+
+The emulation does not perform multiplexing since each note emulates a single channel. This mean emulation is KiraStudio will sound cleaner than it would on real hardware.
+
+* **Edit WaveTable** : Opens the wavetable editor. Multi-wave is supported.
+* **Emulated Channels** : Even though the emulation only simulates a single channel, it cam run the chip with extra blank channels present, leading to a grittier sound.
 
 # Game Boy Generators
 
+This section will cover the various Game Boy generators and their parameters. This section assume some knowledge of the Game Boy audio. 
+
+All Game Boy emulation is performed at 4.194304 MHz.
+
 ## ![](images/GeneratorSquare.png#header) Game Boy Square
 
-xxx
+A Game Boy square channel generating pulse waves with variable duty cycles, used for melodies, harmonies, and classic chiptune leads.
+
+* **Duty** : The percentage of time the pulse waveform is kept high.
 
 ## ![](images/GeneratorNoise.png#header) Game Boy Noise
 
-xxx
+A Game Boy noise channel producing white or periodic noise, ideal for percussion, hi-hats, and sound effects.
 
 ## ![](images/GeneratorWaveTabel.png#header) Game Boy Wave
 
-xxx
+A Game Boy wave channel playing back 4-bit custom waveforms, allowing unique timbres, bass tones, and sampled-like textures uncommon in other handhelds.
+
+* **Octave Offset** : The GB noise can generate 128 unique sounds, but the app piano only has 108 keys. This offsets the entire piano by 1 or 2 octaves to reach the other tones.
+* **Metallic Mode** : Affects how the noise generates its RNG and changes the tone of the noise.
