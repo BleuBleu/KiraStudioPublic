@@ -36,6 +36,10 @@ img[src*="#center"] {
     display: block;
     margin: 0 auto;
 }
+img[src*="#header"] {
+    filter: brightness(70%);
+    transform: translateY(-2px);
+}
 img[src*="#grey"] {
     filter: brightness(70%)
 }

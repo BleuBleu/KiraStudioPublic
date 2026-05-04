@@ -1,4 +1,4 @@
-# Overview
+# Piano Roll
 
 The **Piano Roll** is where you enter notes inside of patterns, and likely where you will be spending most of your time in the app.
 

@@ -1,4 +1,4 @@
-# Overview
+# Project Explorer
 
 The **Project Explorer** allows editing the various parameters of the objects in your projects: songs, instruments, generators, effects, samples, etc. 
 

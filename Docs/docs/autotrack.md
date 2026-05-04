@@ -1,4 +1,4 @@
-# Overview
+# Automation Track Editor
 
 The **Automation Track Editor** is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.
 

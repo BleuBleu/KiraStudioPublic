@@ -1,4 +1,4 @@
-# Overview
+# Sequencer
 
 The **Sequencer** (or Pattern Editor) displays a grid of patterns. This is where you will edit the high-level structure of your song.
 

@@ -1,4 +1,4 @@
-# Overview
+# Envelopes
 
 Curves are one way to automate (i.e. control) the value of parameters on a generator, effect or channel. Curves are best suited to automate short or repetitive variations, such as the attack of an instrument, or a simple tremolo/vibrato. 
 
