@@ -238,7 +238,7 @@ Please do note that the operator precedence in Caustic is non-standard and you w
 * **Operator Precedence** : Affects the priorities of operators. Caustic's 8-Bit Synth was non-standard and this can be used to match their presets
 * **Period Bits** : The number of bits to use in the period, affects how long sequences can be before repeating. Bytebeat interpreter typically use 32, Caustic used 16.
 * **Octave** : Very coarse pitch adjustment, can transpose by entire octaves.
-* **X** : =Additional variable that can be used in the equation, can be used to create interesting effects when controlled by a curve.
+* **X** : Additional variable that can be used in the equation, can be used to create interesting effects when controlled by a curve.
 
 ## ![](images/GeneratorIcons/GeneratorSoundFont.png#header) SoundFont
 
