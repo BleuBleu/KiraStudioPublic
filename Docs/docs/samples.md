@@ -28,7 +28,7 @@ The 32-Bit PCM sample format also supports setting a loop point on samples, allo
 
 Samples exists as part of an instrument, and are used by its generator(s). Navigate the [Project Explorer](instruments.md/#editing-instruments) to an instrument, by either going to that instrument directly, or clicking a channel using this instrument. The list of sample will be located below the list of generators. Samples can be previewed by pressing the little "Play" button next to their name.
 
-Please note that in version 1.0, samples were at the project level. This was changed in 1.1 and older projects are automatically migrated.
+Please note that in version 1.0, samples were at the project level. This was changed in 1.1 to moved them on the instrument to make instrument sharing easier. Older projects are automatically migrated.
 
 ![](images/InstrumentSamples.png#center)
 
@@ -74,5 +74,23 @@ In the example below, the C5 note of a violin is trimmed to only keep the attack
 
 ![](images/SampleTrimLoopStitch.png#center)
 
+Note that the preview buttons in the Sample Editor do not preview the actual looping part, just the raw sample. To hear the proper loop in context, you should play the instrument itself with pop-up piano or MIDI controller.
+
 ## Sample Map Editor
+
+Once you have some samples loaded, the final step is to assign them to keys of the piano via a Sample Map. The sample map editor can be opened by pressing the "Edit Sample Map..." button any generator that supports samples. 
+
+The sample map editor is pretty straightforward. The floating toolbar on the top right allows you to pick a sample, and clicking anywhere on a free space in the background will assign that sample to the corresponding piano key. Just like the other editors, you can drag things to move them, make a selection with right click, delete things, etc.
+
+![](images/SampleMapEditor.png#center)
+
+Some generators, notably the PCM sampler will allow you to extend samples over a range of notes and handle the pitch-shifting from the root note automatically. Simply click on a sample, and drag the 2 round arrow to set the low/high range that the sample should cover. In the example above, 3 octaves of bass are covered with only 3 samples.
+
+Some generators, such as the NES 1-Bit DPCM generator, will have some extra property on each entry in the map. These can be modified for a selected entry and multi-selection is also supported. 
+
+![](images/SampleMapEntryParams.png#center)
+
+Finally, when samples are correctly assigned, the keys of the piano, both in the piano roll and the pop-up piano, will be tinted by the color of the samples as an extra visual cue to show where the valid notes are.
+
+![](images/SampleColors.png#center)
 
