@@ -111,6 +111,8 @@ Generators are combined in a top-to-bottom order. When adding generators this is
 
 Generators can be added by pressing the **(+) Add Generator** button below the last generator, and can be deleted by right-clicking (or long-pressing on mobile) on a specific generator and selecting the delete option.
 
+Similarly, samples can be imported by pressing the **(+) Add Sample(s)** button below the list of generators.
+
 As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own, by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference being that some forms of automation, namely automation tracks and note parameters, can only exist when an instrument is used as part of a channel. In other words, the same instrument used by 2 different channels may have different parameters automated. This will be covered in sections that will be added soon.
 
 <!--

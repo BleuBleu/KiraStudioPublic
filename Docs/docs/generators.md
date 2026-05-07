@@ -4,7 +4,7 @@ This page contains some reference on all the generators present in the app.
 
 Generators are little modules able to produce one type of sound and are the building blocks of instruments. The stack of generators is evaluated from top to bottom. Their outputs are combined based on the blend mode specified, like Photoshop layers, to generate the audio of an instrument. By default this will be a simple sum.
 
-With a few exceptions (SoundFont for example), most generators that output basic waveforms have been calibrated with a -12dB reduction baked it, meaning they output at an amplitude of -0.25 to 0.25 by default, and not -1 to 1.
+With a few exceptions (SoundFont, for example), most generators that output basic waveforms have been calibrated with a -12dB reduction baked it, meaning they output at an amplitude of -0.25 to 0.25 by default, and not -1 to 1.
 
 ## Emulation Accuracy
 
