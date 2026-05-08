@@ -136,17 +136,15 @@ The compressor effect can optionally use another channel as a side-chain. The si
 
 ![](images/EffectParams/EffectCompressor.png#center)
 
->TODO: Add params once I write the tooltips in the app.
-
 * **Wet/Dry Mix** : How much of the compressed signal to mix in.
-* **Threshold** : 
-* **Ratio** : 
-* **Knee** : 
-* **Make-Up Gain** : 
-* **Attack** : 
-* **Release** : 
-* **Side-Chain** : 
-* **Side-Chain High-Pass Filter Frequency** : 
+* **Threshold** : Signal level where compression begins reducing volume to control dynamic range
+* **Ratio** : Determines how strongly audio above the threshold is reduced by the compressor
+* **Knee** : Smooths the transition between uncompressed and compressed signal levels around the threshold
+* **Make-Up Gain** : Boosts output volume after compression compensates for reduced signal level
+* **Attack** : Controls how quickly compression engages after the signal exceeds the threshold
+* **Release** : Controls how quickly compression stops after the signal falls below threshold
+* **Side-Chain** : Optional channel to use as input for the compressor, needs to be upstream from current channel
+* **Side-Chain High-Pass Filter Frequency** : Removes low frequencies from the detector to reduce bass-triggered compression
 
 ## ![](images/EffectIcons/EffectDistortion.png#header) Distortion
 

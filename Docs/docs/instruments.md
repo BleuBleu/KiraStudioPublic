@@ -29,6 +29,18 @@ The general structure of a project in KiraStudio is:
 	- Each instruments is made of generator(s)
 - A project also contains zero or more samples(s)
 
+# Editing the project
+
+The project itself has some basic parameters such as a name and author. The only other one worth mentionning is the **Update Frequency**. This is the frequency at which the app will perform tasks like : advancing the song, update the various forms of automation, advancing the envelopes/sequences, etc. 
+
+![](images/ProjectParams.png#center)
+
+Lowering the update frequency to something like 50 or 60 Hz can be used to mimic how retro game system only updated their state once per frame (60 FPS on NTSC, 50 FPS on PAL). It can make things sound a bit more uneven and crunchy.
+
+Some things like [sequences](envelopes.md#sequence-editor) and [wavetables](wavetables.md) are intimately connected to the project update rate, so understanding this concept is important if you are planning to use those.
+
+On the technical side, KiraStudio generates all audio in chunks of 32 samples. Things like envelopes and automation curves are only evaluated once every chunk since those are basically assumed to be LFOs. At 48 KHz, which is the sample rate used by the app, this gives a maximum update rate of 48000 / 32 = 1500 Hz. 
+
 # Editing songs
 
 When creating a new project it will already contain a song by default, but it can contain more. To create a new song, navigate back to the root of your project and click the **(+) Add Song** button. Clicking on a song will show its properties and will make it the active one inside the app.
@@ -61,14 +73,13 @@ Besides their name/color, effect chains have 3 unique parameters:
 
 A much more efficient way of adjusting the volume, balance and effect send of a channel is to use the [mixer view of the sequencer](sequencer.md#mixer-view).
 
-Effects are applied one at a time, in a top-to-bottom order, but the channel volume and balance are applied at the end, after all effects of the channel have been applied. To alter the volume or balance prior to, or between 2 effects, a dedicated **Volume** and **Pan/Balance** effect exists.
+Effects are applied one at a time, in a top-to-bottom order, but the channel volume and balance are applied at the end, after all effects of the channel have been applied. To alter the volume or balance prior to, or between 2 effects, a dedicated [Volume](effects.md#volume) and [Pan/Balance](effects.md#pan) effect exists.
+
+For the full list of available effects, please check out the [effects reference](effects.md).
 
 Effects can be added by pressing the **(+) Add Effect** button below the last effect, and can be deleted by right-clicking (or long-pressing on mobile) on a specific effect and selecting the delete option.
 
-<!--
-> TODO : Link to volume + balance effect.
-> TODO : Link effect reference here. 
--->
+Finally, just like [channels in the Sequencer](sequencer.md#muting-soloing-channels), clicking on the little icon of an effect will disable it. A disable effect will just act as pass-through its icon will appear dimmed.
 
 ## Master channel
 
@@ -108,6 +119,8 @@ Most instruments will only contain a single generator, but combining them can yi
 ![](images/InstrumentParameters.png#center)
 
 Generators are combined in a top-to-bottom order. When adding generators this is not very important, but when using different **Blend Modes**, this becomes important.
+
+Much like [channels in the Sequencer](sequencer.md#muting-soloing-channels), clicking on the little icon of a generator will mute it. A muted generator will just output silence and its icon will appear dimmed.
 
 Generators can be added by pressing the **(+) Add Generator** button below the last generator, and can be deleted by right-clicking (or long-pressing on mobile) on a specific generator and selecting the delete option.
 

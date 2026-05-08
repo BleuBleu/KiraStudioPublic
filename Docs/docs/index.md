@@ -32,7 +32,5 @@ The quickest way of getting started with KiraStudio is simply to follow this tut
 
 <!--
 # TODO
-
-* Where do we talk about song/project/channel stuff? Time signature, etc.
 * Config
 -->

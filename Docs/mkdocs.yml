@@ -13,6 +13,7 @@ nav:
   - "WaveTables": wavetables.md
   - "Generators Reference": generators.md
   - "Effects Reference": effects.md
+  - "Configuration": config.md
   - "Troubleshooting": troubleshooting.md
   - "Acknowledgements & Licences": thanks.md
   - "Demo Song SoundFonts": soundfonts.md

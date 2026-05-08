@@ -8,11 +8,7 @@ There are 3 main types of curves in KiraStudio:
 
 - **Custom Curve** : Custom curves in KiraStudio can reproduce most of what ADSR envelopes do, but are much more flexible. They can have an arbitrary number of vertices, segments can have different curvatures, and custom loop and release points can be set. They are also able to sync to the beat of the song better than ADSR. You may use custom curves as a substitute for ADSR envelopes, but they are generally better suited for things like tremolos and vibratos. When used that way, they are often referred to as LFOs (low-frequency oscillators) in other music applications. 
 
-- **Sequence** : Sequences are a discrete series of numbers, represented as a bar graph. They mostly exist to give more granular control over the values, when running at low update rates and trying to reproduce the behavior of retro consoles (e.g. to sound like a console that ran at 60Hz). For this reason, the speed at which they they advance is intimately tied to the [update rate](instruments.md) of your project.
-
-<!--
-> TODO : Make sure this points to the right place.
--->
+- **Sequence** : Sequences are a discrete series of numbers, represented as a bar graph. They mostly exist to give more granular control over the values, when running at low update rates and trying to reproduce the behavior of retro consoles (e.g. to sound like a console that ran at 60Hz). For this reason, the speed at which they they advance is intimately tied to the [update rate](instruments.md#editing-the-project) of your project.
 
 Not every parameter will offer you all 3 types of curves, instead attempting to offer you a selection that makes sense for that type of parameter.
 
@@ -110,16 +106,12 @@ For example, if the note was released while the curve had a value of 50%, the en
 
 The sequence editor is mostly aimed at replicating the sound of chiptune, where values would often change in dicrete steps at very specific intervals, such at once per frame at 60 FPS. 
 
-Each step on the X-axis represents the value for 1 **Frame**. The duration of a frame is derived from the **Advance Rate** and the [**Project Update Rate**](instruments.md). The advance rate is an interval of the project update rate.
+Each step on the X-axis represents the value for 1 **Frame**. The duration of a frame is derived from the **Advance Rate** and the [**Project Update Rate**](instruments.md#editing-the-project). The advance rate is an interval of the project update rate.
 
 For example:
 
 - If your project update rate is 1500 Hz (the default) and the advance rate is 25, each column represents 1/60th of a second (25 / 1500). 
 - If your project update rate is 60 Hz (good for chiptune) and the advance rate is 1, each column also represents 1/60th of a second (1 / 60).
-
-<!--
-> TODO : Link to where we discuss project settings.
--->
 
 ![](images/Sequence.png#center)
 
