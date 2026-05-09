@@ -30,7 +30,7 @@ The 32-Bit PCM sample format also supports setting a loop point on samples, allo
 
 ## Importing Samples
 
-Samples exists as part of an instrument, and are used by its generator(s). Navigate the [Project Explorer](instruments.md/#editing-instruments) to an instrument, by either going to that instrument directly, or clicking a channel using this instrument. The list of sample will be located below the list of generators. Samples can be previewed by pressing the little "Play" button next to their name.
+Samples exists as part of an instrument, and are used by its generator(s). Navigate the [Project Explorer](projectexplorer.md/#editing-instruments) to an instrument, by either going to that instrument directly, or clicking a channel using this instrument. The list of sample will be located below the list of generators. Samples can be previewed by pressing the little "Play" button next to their name.
 
 Please note that in version 1.0, samples were at the project level. This was changed in 1.1 to moved them on the instrument to make instrument sharing easier. Older projects are automatically migrated.
 

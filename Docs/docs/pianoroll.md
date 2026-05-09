@@ -36,12 +36,10 @@ Selected notes have a white outline around them and can be modified as a group.
 * On desktop, you can select notes by right-clicking in the background and dragging to draw a rectangle. You can also add to the existing selecting by holding **Ctrl** while performing a selection.
 * On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. 
 
-
-
 You can also select a time range of notes by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.
 
 <!--
-> TODO : Animated GIF, desktop/mobile.
+TODO : Animated GIF would be nice here, desktop + mobile.
 -->
 
 ## Moving, transposing and resizing notes
@@ -98,8 +96,8 @@ The frequency and period linear modes will display a convex or concave slide not
 
 The target and duration of a slide note can be modified by dragging the **Four-Arrows Icon** that will appear if a slide note is present. 
 
-* When using the [note end release mode](#release-modes), slide notes can extend beyond the release of the note, as sound can still be heard during the release. 
-* When using the [manual release mode](#release-modes), slide notes will be required to end exactly at the end of the note, as this represent a hard-kill.
+* When using the [note end release mode](projectexplorer.md#release-modes), slide notes can extend beyond the release of the note, as sound can still be heard during the release. 
+* When using the [manual release mode](projectexplorer.md#release-modes), slide notes will be required to end exactly at the end of the note, as this represent a hard-kill.
 
 ## Disabling attack
 
@@ -126,19 +124,13 @@ To enable arpeggio chords, simply select the notes of a chord, right-click on an
 
 ![](images/ArpeggioChord.png#center)
 
-The speed and order in which individual notes of an arpeggio is played is controlled in the channel settings, under the **Arpeggio** tab.
+The speed and order in which individual notes of an arpeggio is played is controlled in the [channel settings](projectexplorer.md#instrument-channels).
 
-![](images/ArpeggioSettings.png#center)
+## Manual release
 
-<!--
-> TODO : Do we explain the settings here? Or in PE page?
--->
+When a channel uses the [Manual Release Mode](projectexplorer.md#release-modes), you can send the location of the release, which is represented by a dot along the note. To toggle the manual release, right-click on any selected note (long-press on mobile) and select **Toggle Manual Release**.
 
-## Release modes
-
-<!--
-> TODO : Explain both modes, with images.
--->
+Notes with a manual release will show an extra round handle allowing you to move the release along the note.
 
 ## Ghost notes
 

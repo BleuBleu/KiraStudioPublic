@@ -9,7 +9,7 @@ Welcome to the KiraStudio documentation. Please use the __User Guide__ menu abov
 * [Channels, Tracks and Patterns](sequencer.md)
 * [Piano Roll](pianoroll.md)
 * [Automation Tracks](autotrack.md)
-* [Instruments, Effects and Automating Parameters](instruments.md)
+* [Instruments, Effects and Automating Parameters](projectexplorer.md)
 * [ADSR Envelopes, Custom Curves and Sequences](envelopes.md)
 * [Samples Workfloat](samples.md)
 * [WaveTables](wavetables.md)

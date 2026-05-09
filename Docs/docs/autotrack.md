@@ -2,7 +2,7 @@
 
 The **Automation Track Editor** is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.
 
-To learn how to create an automation track for a given parameter, please refer to [this section](instruments.md#automating-parameters).
+To learn how to create an automation track for a given parameter, please refer to [this section](projectexplorer.md#automating-parameters).
 
 The automation track editor is made of a few components:
 
@@ -50,7 +50,7 @@ While dragging vertices, you can duplicate the current selection by pressing and
 
 ## Copy and pasting vertices
 
-This works exactly as in the [piano roll](pianoroll.md#copy-pasting-notes).
+This works exactly as in the [piano roll](pianoroll.md#copy-and-pasting-notes).
 
 ## Snapping to beats
 

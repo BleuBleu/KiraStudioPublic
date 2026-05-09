@@ -46,7 +46,7 @@ To add a new channel, simply press the **(+) Add** button below the last track. 
 
 Additionally, if there is a selected channel, you'll have the option to add a piano roll track to it. Having multiple piano roll tracks on a channel is mostly for your own organization, although there are some cases where it can be useful (arpeggios, playing the same note twice, etc.).
 
-To add an automation track, you need to choose a parameter to automate in the [project explorer](instruments.md).
+To add an automation track, you need to choose a parameter to automate in the [project explorer](projectexplorer.md).
 
 ![](images/AddChannel.png#center)
 
@@ -66,7 +66,7 @@ On mobile, double-tapping on a channel name will also pop open the project explo
 
 ![](images/ChannelSettings.png#center)
 
-These parameters are explained more in-depth in the [project explorer](instruments.md) section of the documentation, but this is where you can change the name, color, volume, balance and effect sends of a specific channel. Individual tracks cannot be renamed.
+These parameters are explained more in-depth in the [project explorer](projectexplorer.md) section of the documentation, but this is where you can change the name, color, volume, balance and effect sends of a specific channel. Individual tracks cannot be renamed.
 
 ## Mixer view
 

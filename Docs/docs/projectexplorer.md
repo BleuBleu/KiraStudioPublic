@@ -14,7 +14,7 @@ The project explorer displays parameters in sections that can be expanded and co
 
 Some items (songs, instruments, generators, effects) will show little re-order grips that can be used to move them up/down in a stack. Also, most item will have context menus that can be accessed by right-clicking desktop or long pressing on mobile. The context menus will contain functionalities to duplicate and copy/paste parameters.
 
-## Project structure
+# Project structure
 
 At the very top of the project explorer is the **Navigation bar**. Much like the folder hierarchy on a computer, it shows the path of the current object in your project. 
 
@@ -105,7 +105,7 @@ For the full list of available effects, please check out the [effects reference]
 
 Effects can be added by pressing the **(+) Add Effect** button below the last effect, and can be deleted by right-clicking (or long-pressing on mobile) on a specific effect and selecting the delete option.
 
-Finally, just like [channels in the Sequencer](sequencer.md#muting-soloing-channels), clicking on the little icon of an effect will disable it. A disable effect will just act as pass-through its icon will appear dimmed.
+Finally, just like [channels in the Sequencer](sequencer.md#muting-and-soloing-channels), clicking on the little icon of an effect will disable it. A disable effect will just act as pass-through its icon will appear dimmed.
 
 ## Master channel
 
@@ -127,13 +127,36 @@ Instrument channels are the most complex type of channel. They feature all the s
 
 Is it important to understand that instrument channels **reference** (i.e. use) an instrument present in your project, which can be used by several channels at once. For convenience, when displaying the parameters of an instrument channel, KiraStudio will also show you the parameters of that instrument in the channel. Channels have their own name/color, independent of the name/color of the instrument.
 
-For example, in the image below, the "Bitcrushed Drums 1" channel is purple and uses the instrument "GS ROOM", which is yellow. We are effectively looking at 2 objects: an instrument at the top and a channel at the bottom. This order is to emphasise that effects are applied *after* generating the audio of the instrument.
+For example, in the image below, the "Bitcrushed Drums 1" channel is purple and uses the instrument "GS ROOM", which is yellow. We are effectively looking at 2 objects: an instrument at the top and a channel at the bottom. This order is to emphasize that effects are applied *after* generating the audio of the instrument.
 
 ![](images/InstrumentChannelParameters.png#center)
 
 Besides the standard effect chain parameters, instrument channels have a single unique parameter:
 
 - **Instrument** : This allows changing the instrument used by the channel. Clicking this will allow choosing a different one, or create a new one from scratch.
+
+Instrument channels will also display all the parameters on an instrument, for convenience. These are documented in the [section below](#editing-instruments).
+
+### Polyphony parameters
+
+In the polyphony tab, you can change the maximum polyphony of a channel. This can be interesting to create more retro-style instruments where the polyphony of a channel was often 1. When the app runs out of voices, it will kill the voice that has been released for the longest time. If it cannot find any, it will simply kill the oldest voice. Future version may offer more options on how that works.
+
+![](images/PolyphonyParams.png#center)
+
+### Arpeggio parameters
+
+The last tab of the instrument channel parameters is dedicated to arpeggios. Arpeggios are used in the piano roll by turning chords into [arpeggio chords](pianoroll.md#arpeggio-chords). This will make chords play as quick succession of notes, mimicking the limited polyphony that early video game consoles had.
+
+![](images/ArpeggioParams.png#center)
+
+* **Sequence** : Order in which to play the notes of the arpeggio. If we use the example of a C major chord:
+	* **Up** : Will play it as C-E-G
+	* **Down** : Will play it as G-E-C
+	* **Up then Down** : Will play it as C-E-G-E-C
+	* **Down then Up** : Will play it as G-E-C-E-C
+* **Sequence Start Index** : First note in the chose to play, 0 is first note, 1 is second, -1 is last, etc. In our C major example, 0 would start at C, 1 at E, etc.
+* **Frequency Units** : Unit to use for the duration of arpeggiated notes. **Quarter Notes** are self-explanatory, **Project Update Period** is related to the [Update Frequency](projectexplorer.md#project-parameters) of the project.
+* **Frequency** : The frequency, in the selected units.
 
 # Editing instruments
 
@@ -143,17 +166,36 @@ This section will only explain the general principles, a comprehensive [generato
 
 Most instruments will only contain a single generator, but combining them can yield interesting effects. In the example below, a lead instrument is created by adding a pulse-modulated square waveform and a sawtooth waveform.
 
-![](images/InstrumentParameters.png#center)
+![](images/InstrumentGenerators.png#center)
 
 Generators are combined in a top-to-bottom order. When adding generators this is not very important, but when using different **Blend Modes**, this becomes important.
 
-Much like [channels in the Sequencer](sequencer.md#muting-soloing-channels), clicking on the little icon of a generator will mute it. A muted generator will just output silence and its icon will appear dimmed.
+Much like [channels in the Sequencer](sequencer.md#muting-and-soloing-channels), clicking on the little icon of a generator will mute it. A muted generator will just output silence and its icon will appear dimmed.
 
 Generators can be added by pressing the **(+) Add Generator** button below the last generator, and can be deleted by right-clicking (or long-pressing on mobile) on a specific generator and selecting the delete option.
 
 Similarly, samples can be imported by pressing the **(+) Add Sample(s)** button below the list of generators.
 
 As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own, by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference being that some forms of automation, namely automation tracks and note parameters, can only exist when an instrument is used as part of a channel. In other words, the same instrument used by 2 different channels may have different parameters automated. This will be covered in the following section.
+
+Besides generators, instruments have a couple noteworthy parameters (besides their name/color).
+
+![](images/InstrumentParams.png#center)
+
+* **Kill Released Notes After** : Delay after which any released note will be killed. This is more of an emergency feature to prevent badly designed envelopes from running too long. 
+* **Release Mode** : See section below.
+
+## Release modes
+
+The release mode determines at which moment this instrument should trigger its release. There are 2 release modes:
+
+* **Note End** : This is what you see in typical DAWs, then the note ends in the piano roll, the release part of the envelope is triggered. This mean there is still sound potentially playing after the note visually ended. 
+
+![](images/ReleaseNoteEnd.png#center)
+
+* **Manual Release** : This mode is when you need to more accurately control when the sound stops exactly, which is often the case when trying to match the sound of retro-gaming. In this mode, the release starts at a point point the note that you manually set in the piano roll (represented by a dot), and any audio will be killed when the note visually ends.
+
+![](images/ReleaseManual.png#center)
 
 # Automating parameters
 
