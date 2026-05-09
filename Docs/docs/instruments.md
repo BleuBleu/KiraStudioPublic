@@ -153,14 +153,29 @@ Generators can be added by pressing the **(+) Add Generator** button below the l
 
 Similarly, samples can be imported by pressing the **(+) Add Sample(s)** button below the list of generators.
 
-As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own, by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference being that some forms of automation, namely automation tracks and note parameters, can only exist when an instrument is used as part of a channel. In other words, the same instrument used by 2 different channels may have different parameters automated. This will be covered in sections that will be added soon.
-
-<!--
-> TODO : Add the Automating parameters section, and when they are added change the last sentence from "This will be covered in sections that will be added soon" to "This will be covered in the following sections".
+As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own, by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference being that some forms of automation, namely automation tracks and note parameters, can only exist when an instrument is used as part of a channel. In other words, the same instrument used by 2 different channels may have different parameters automated. This will be covered in the following section.
 
 # Automating parameters
--->
 
-<!--
-> Mention that auto track + per note slides can still be changed, for preview purpose.
--->
+Automation is the idea of controlling a numeric parameter automatically in some way. In KiraStudio, almost any numeric parameter present on a channel, generator or effect can be automated in various ways.
+
+To automate a parameter, simply right-click (or long press on mobile) on a slider with a numeric parameter, and choose one of the **Control Parameter With ...**. Depending on the option, this will either create a new curve, new track, etc.
+
+The app supports automating parameters in 5 different ways:
+
+* [ADSR envelope](envelopes.md#adsr-envelope-editor) : A traditional ADSR envelope with simple control over the various Attack/Decay/Sustain/Release phases.
+* [Custom curve](envelopes.md#custom-curve-editor) : A custom drawn curve containing an arbitrary number of vertices and segments, with optional loop and release points.
+* [Sequence](envelopes.md#sequence-editor) : A discrete sequence of values that advances at a fixed frequency.
+* [Automation track](autotrack.md) : A track on a channel that can have curve segments existing in patterns. 
+* [Per-note parameter in the piano roll](pianoroll.md#note-parameters) : An additional parameter that is added to every single note in the piano roll.
+
+Not every option will be available on every parameter, the application will try to offer what makes sense for a given parameter. 
+
+When it comes to instruments, the list of possible automation methods will vary depending on how the instrument is being edited:
+
+1. When editing the instrument alone (Project &rarr; Instrument), outside of a channel by selecting it from the project explorer, you will not have the option of automating anything with automation tracks or per-note parameter since the app needs a channel to do so.
+2. When editing the instrument from an instrument channel (Project &rarr; Song &rarr; Instrument Channel), you will have all the options.
+
+When a parameter is controlled by a curve (ADSR, custom curve or sequence), that parameter is completely taken over by the curve and the automation will be audible even when previewing instruments using a MIDI controller or the pop-up piano. The slider will be disabled
+
+Parameters controlled by automation tracks or per-note will only have their automation active when playing the song. The slider will remain active and can be tweaked to affect the preview of instruments. For automation tracks, the slider value also dictate the default value of the automation track, which is the initial value before any vertices are drawn.

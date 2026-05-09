@@ -28,7 +28,7 @@ There are 3 types of channels:
 * **Effect Chains** only contain effects, and can optionally use automation tracks to modify the values of effect parameters.
 * The **Master Channel** is always present, and cannot be deleted. It is effectively the final effect chain, but can do special things such as automate the BPM of the song.
 
-# Channels & Tracks
+# Channels and Tracks
 
 The channel & tracks of the current song are all on the left side of the sequencer. 
 
@@ -40,7 +40,7 @@ The **Selected Channel** is displayed with lighter colors in the sequencer, and 
 
 In the above screenshot, the "Bitcrushed Drums 1" channel is the selected channel.
 
-## Adding channels & Tracks
+## Adding channels and Tracks
 
 To add a new channel, simply press the **(+) Add** button below the last track. You will be prompted with the type of channel to add.
 
@@ -50,11 +50,11 @@ To add an automation track, you need to choose a parameter to automate in the [p
 
 ![](images/AddChannel.png#center)
 
-## Deleting channels & tracks
+## Deleting channels and tracks
 
 To delete a track or a channel, simply right-click on its name, or long press on mobile. A contextual menu will give you the option to delete it.
 
-## Muting & Soloing channels
+## Muting and Soloing channels
 
 Muting a channel is done by clicking on its icon. Visually, muted channels have their icon dimmed. A single click will mute a channel, while a double click will solo it by muting all the other channels.
 
@@ -74,7 +74,7 @@ A much more efficient way to change the volume, balance and send effect chain of
 
 ![](images/MixerView.png#center)
 
-## Reordering channels & tracks
+## Reordering channels and tracks
 
 On the right of the mixer view are the **Reordering Grips**, which allow the reordering of channels & tracks.
 
@@ -82,7 +82,7 @@ To reorder a channel (i.e. move all the tracks a channel relative to other chann
 
 To reorder a track inside a channel, grab any track that is not the first one, and you will be able to move it relative to other tracks inside that channel. Do note that piano roll tracks always come before automation tracks in a channel, and this will be enforced during reordering.
 
-## Duplicating channels & tracks
+## Duplicating channels and tracks
 
 Right-clicking (or long pressing on mobile) on a channel or track name will offer you 3 duplication options:
 
@@ -90,7 +90,7 @@ Right-clicking (or long pressing on mobile) on a channel or track name will offe
 * **Duplicate Channel (Duplicate instrument)**: Duplicates the entire channel and all its tracks. Also duplicates the instrument and uses the newly created copy.
 * **Duplicate Track**: Duplicate a single track. Automation tracks cannot be duplicated.
 
-# Patterns & Bars
+# Patterns and Bars
 
 At the center of the sequencer are all the patterns of the current song. 
 
@@ -108,7 +108,7 @@ Another difference is that, when opening the piano roll or automation editor, pa
 
 Please keep these differences in mind as you read the next few sections...
 
-## Adding, Deleting & Resizing patterns
+## Adding, Deleting and Resizing patterns
 
 Patterns are simply added by clicking in an empty space in the grid. 
 
@@ -131,7 +131,7 @@ When selecting patterns this way, you will notice that the bar numbers also get 
 === "Mobile"
     ![](images/SelectPatternsMobile.gif#center)
 
-## Copying & instancing patterns
+## Copying and instancing patterns
 
 Patterns have associated 3-digit numbers. This number is a unique pattern on a given track, and allows you to tell if a pattern is used multiple times inside a track. Re-using a pattern multiple times in a track is called **instancing**. When modifying a pattern, all of the its instances will be modified at the same time. 
 

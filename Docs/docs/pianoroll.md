@@ -18,7 +18,7 @@ Unlike other apps like FL Studio, the piano roll does not only show you the note
 
 We will focus our attention to the center of the piano roll where all the notes lie.
 
-## Adding & deleting notes
+## Adding and deleting notes
 
 To add a new note, simply click on an empty space.
 
@@ -44,7 +44,7 @@ You can also select a time range of notes by doing a selection from the timeline
 > TODO : Animated GIF, desktop/mobile.
 -->
 
-## Moving, transposing & resizing notes
+## Moving, transposing and resizing notes
 
 To move notes, simply click and drag. When starting a drag from a selected note, all the selected notes will move together.
 
@@ -60,7 +60,7 @@ When there is more than 1 note selected, the entire selection can be duplicated 
 === "Mobile"
     ![](images/DuplicateNotesMobile.gif#center)
 
-## Copy & pasting notes
+## Copy and pasting notes
 
 An alternative way of duplicating notes is to use copy & paste. This provides more flexibility, as it allows copy and pasting notes between tracks.
 
@@ -76,11 +76,7 @@ The snapping precision is expressed in beats. This mean that using a 4/4 time si
 
 ## Changing the zoom level
 
-<!--
-> TODO : Check link to trackpad controls!
--->
-
-On desktop, like in most views of the app, zooming horizontally is done using the mouse wheel, or a pinch gesture when using [trackpad controls](config.md). To zoom in vertically, simply use the mousewheel (or pinch on trackpad) on the vertical piano on the left. 
+On desktop, like in most views of the app, zooming horizontally is done using the mouse wheel, or a pinch gesture when using [trackpad controls](config.md#input). To zoom in vertically, simply use the mousewheel (or pinch on trackpad) on the vertical piano on the left. 
 
 On mobile, all zooming is done with a pinch gesture. 
 

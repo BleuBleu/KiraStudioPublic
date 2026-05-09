@@ -2,11 +2,7 @@
 
 The **Automation Track Editor** is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.
 
-<!--
-> TODO : Link to relevant PE section!
-
-To learn how to create an automation track for a given parameter, please refer to [this section](instruments.md#Automating-parameters).
--->
+To learn how to create an automation track for a given parameter, please refer to [this section](instruments.md#automating-parameters).
 
 The automation track editor is made of a few components:
 
@@ -25,7 +21,7 @@ Curves are either smooth (interpolated) or not. Uninterpolated curves will switc
 
 As seen in the image above, vertices belonging to the same pattern will be connected by a solid line, while vertices between different patterns won't show a line. This is simply a visual cue to help you differentiate the lines you have intentionally drawn, and the ones the app is implicitly adding between patterns.
 
-## Adding & deleting vertices
+## Adding and deleting vertices
 
 Adding vertices is done with a single click. On desktop, you can keep holding the mouse button to fine-tune its position until you release. 
 
@@ -52,7 +48,7 @@ On desktop, you can also move vertices using the arrow keys. Pressing up/down wi
 
 While dragging vertices, you can duplicate the current selection by pressing and holding **Ctrl**. 
 
-## Copy & pasting vertices
+## Copy and pasting vertices
 
 This works exactly as in the [piano roll](pianoroll.md#copy-pasting-notes).
 

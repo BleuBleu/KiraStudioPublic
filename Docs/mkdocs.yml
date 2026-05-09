@@ -4,11 +4,11 @@ nav:
 - User Guide:
   - "Installation": install.md
   - "Basics": basics.md
-  - "Channels, Tracks & Patterns": sequencer.md
+  - "Channels, Tracks and Patterns": sequencer.md
   - "Piano Roll": pianoroll.md
   - "Automation Tracks": autotrack.md
-  - "Instruments, Effects & Automating Parameters":  instruments.md
-  - "ADSR Envelopes, Custom Curves & Sequences": envelopes.md
+  - "Instruments, Effects and Automating Parameters":  instruments.md
+  - "ADSR Envelopes, Custom Curves and Sequences": envelopes.md
   - "Samples Workflow": samples.md
   - "WaveTables": wavetables.md
   - "Generators Reference": generators.md
@@ -16,7 +16,7 @@ nav:
   - "Configuration": config.md
   - "Export": export.md
   - "Troubleshooting": troubleshooting.md
-  - "Acknowledgements & Licences": thanks.md
+  - "Acknowledgements and Licences": thanks.md
   - "Demo Song SoundFonts": soundfonts.md
 - Change Log:
   - "All Version History": changelog.md

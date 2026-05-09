@@ -57,7 +57,7 @@ Curve curves and sequences can run in 2 modes : **Sync** or **Trigger**.
 
 For parameters that are not on a generator (e.g. on an effect or a channel) the app will force you to use Sync mode, since there is no notion of notes being triggered in this context.
 
-## Copy & pasting
+## Copy and pasting
 
 Copy and pasting support varies a bit depending the type of curve:
 
