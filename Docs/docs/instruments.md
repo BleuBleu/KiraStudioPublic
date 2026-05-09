@@ -47,7 +47,7 @@ When creating a new project it will already contain a song by default, but it ca
 
 ![](images/SongParameters.png#center)
 
-Songs have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a [custom time signature](#custom-time-signatures).
+Songs have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a [custom time signature](sequencer.md#custom-time-signatures).
 
 Also displayed along with the song parameters the the list of channels. Clicking a channel will navigate to its parameters, exactly as if you had clicked on the channel name in the [sequencer](sequencer.md).
 

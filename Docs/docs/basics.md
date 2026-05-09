@@ -14,7 +14,7 @@ Most operations are performed with the mouse. In general:
     * **Middle-clicking + holding and dragging** will pan the viewport.
     * **Rotating the mouse wheel** will zoom the viewport in/out.
 
-If you are working on a trackpad, please check out how to enable [Trackpad controls](config.md#input-configuration) in the configuration dialog.
+If you are working on a trackpad, please check out how to enable [Trackpad controls](config.md#input) in the configuration dialog.
 
 ## Basic Mobile Controls
 

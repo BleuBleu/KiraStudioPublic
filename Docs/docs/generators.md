@@ -184,7 +184,7 @@ A little operator diagram representing how the various operators are connected i
 
 A generic wavetable synth using 4 to 8-bit waveforms, capable of cycling through multiple tables at a fixed rate for evolving, dynamic, and textured sounds. 
 
-The concept of a WaveTable will not be explained here, please refer to the [wavetable section](wavetable.md) of the documentation for more information.
+The concept of a WaveTable will not be explained here, please refer to the [wavetable section](wavetables.md) of the documentation for more information.
 
 ![](images/GeneratorParams/GeneratorWaveTable.png#center)
 
