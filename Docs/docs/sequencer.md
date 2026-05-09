@@ -111,7 +111,7 @@ Patterns are simply added by clicking in an empty space in the grid.
 
 Selected patterns have a white outline around them, and can be moved and resized as a group.
 
-* On desktop, you can select patterns by right-clicking anywhere in the grid and dragging to move the rectangle. 
+* On desktop, you can select patterns by right-clicking anywhere in the grid and dragging to move the rectangle. You can also add to the existing selecting by holding **Ctrl** while performing a selection.
 * On mobile, you can long-press where you want to start drawing a rectangle once the pulsating circle appears. 
 
 You can also select entire columns of patterns by doing a selection from the timeline, which is the row with the bar numbers at the top. 
@@ -144,9 +144,16 @@ To create a completely separate copy of a pattern that retains no connection to 
 
 If you have created instances of a pattern, but have second thoughts and want to make a unique copy instead, you can simply right-click on a pattern (long-press on mobile) and select the **Make Pattern(s) Unique** option. This will create a completely independent copy which its own unique 3-digit number.
 
-## Merging identical patterns
+## Converting identical patterns to instances
 
-On the flip-side, if you have created many copies of a pattern and did not end up making any changes to them, you can select the pattern(s), right-click (long-press on mobile) it and choose the **Merge Identical Patterns** option. This will look for perfectly identical patterns, and create instances if matches are found.
+On the flip-side, if you have created many copies of a pattern and did not end up making any changes to them, you can select the pattern(s), right-click (long-press on mobile) it and choose the **Convert Identical Patterns to Instance(s)** option. This will look for perfectly identical patterns, and create instances if matches are found.
+
+## Merging patterns
+
+If you created many small patterns are wish to merge them into larger onces, you can select them and use the **Merge Patterns into larger one(s)**. The algorithm will merge any contiguous selection range into a single large patterns. 
+
+![](images/MergePatterns.gif#center)
+
 
 ## Setting the loop point
 

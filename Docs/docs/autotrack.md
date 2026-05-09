@@ -35,7 +35,7 @@ Deleting a single vertex can be done by double-clicking. To deleting the entire 
 
 Selected vertices appear white and can be modified as a group.
 
-* On desktop, you can select vertices by right-clicking in the background and dragging to draw a rectangle. 
+* On desktop, you can select vertices by right-clicking in the background and dragging to draw a rectangle. You can add to the existing selecting by holding **Ctrl** while performing a selection.
 * On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. 
 
 You can also select a time range of vertices by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.

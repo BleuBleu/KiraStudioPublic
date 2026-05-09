@@ -33,8 +33,10 @@ On all platforms, deleting single notes is achieved by double-clicking. **Shift-
 
 Selected notes have a white outline around them and can be modified as a group.
 
-* On desktop, you can select notes by right-clicking in the background and dragging to draw a rectangle. 
+* On desktop, you can select notes by right-clicking in the background and dragging to draw a rectangle. You can also add to the existing selecting by holding **Ctrl** while performing a selection.
 * On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. 
+
+
 
 You can also select a time range of notes by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.
 
@@ -148,7 +150,13 @@ The speed and order in which individual notes of an arpeggio is played is contro
 
 ![](images/GhostNotes.png#center)
 
-As of version 1.0, the feature is quite primitive. Ghost notes can be enabled for a single channel, or for all channels at once using the option from the floating toolbar.
+You can select which other channels you want to see as ghost notes by checking them in the menu from the floating toolbar.
+
+## Scales
+
+By default, the piano roll highlights the white and black keys, which is the C major scale. You can change the type of scale as well as the root note from the floating toolbar. This setting is per-track, so different tracks may choose to highligt different scales.
+
+As of 1.x, the app supports the following scales: Major (Ionian), Natural Minor (Aeolian), Harmonic Minor, Melodic Minor (Jazz Minor, Dorian, Phrygian, Lydian, Mixolydian, Major Pentatonic, Minor Pentatonic, Blues and Whole Tone.
 
 # Note Parameters 
 
@@ -180,10 +188,12 @@ The type of value for a given note parameter can be changed through the **Value 
 * **Curve** : a value that can change abrutly.
 * **Curve (Interpolated)** : a value that changes smoothly
 
-Once a note is set to either curve modes, you can edit its curve by enabling the **Curve Edit Mode** from the floating toolbar. As of version 1.0, this feature is quite primitive and can only be enabled when a single note is selected.
+Once a note is set to either curve modes, you can edit its curve by enabling the **Curve Edit Mode** from the floating toolbar.
 
 When curve edit mode is active, a single-click on the curve will add a new vertex, and double-click with delete and existing one.  The first and last vertex cannot be deleted and the last vertex is currently required to be at the end of the note duration. 
 
 Vertices can be moved by dragging and will respect any snapping setting.
 
 ![](images/NoteParamCurve.gif#center)
+
+When multiple notes are selected, any modification to a curve will cause all other selected notes' curves to become identical to the one being editing.
