@@ -82,6 +82,14 @@ To reorder a channel (i.e. move all the tracks a channel relative to other chann
 
 To reorder a track inside a channel, grab any track that is not the first one, and you will be able to move it relative to other tracks inside that channel. Do note that piano roll tracks always come before automation tracks in a channel, and this will be enforced during reordering.
 
+## Duplicating channels & tracks
+
+Right-clicking (or long pressing on mobile) on a channel or track name will offer you 3 duplication options:
+
+* **Duplicate Channel (Use same instrument)**: Duplicates the entire channel and all its tracks. Links to the same instrument. 
+* **Duplicate Channel (Duplicate instrument)**: Duplicates the entire channel and all its tracks. Also duplicates the instrument and uses the newly created copy.
+* **Duplicate Track**: Duplicate a single track. Automation tracks cannot be duplicated.
+
 # Patterns & Bars
 
 At the center of the sequencer are all the patterns of the current song. 
@@ -154,10 +162,15 @@ If you created many small patterns are wish to merge them into larger onces, you
 
 ![](images/MergePatterns.gif#center)
 
+## Loop section 
+
+A temporary loop section can be activated by enabling the **Show Loop Section** option from the floating toolbar. This can be useful to make the playback continuously loop over over a section of the song that you are working on. 
+
+![](images/TempLoop.png#center)
 
 ## Setting the loop point
 
-Each song can have a loop point, which is where the song will jump to when the end is reached. Currently this is quite primitive, and the song will loop forever. 
+Not to be confused with the aforementioned temporary loop section, each song can have a loop point, which is where the song will jump to when the end is reached. This can be used to create infinitely looping tracks, which is common in things like video games. Currently this is quite primitive, the song will loop forever. 
 
 * To set the loop point to a specific bar, simply right-click (long-press on mobile) on the bar number in the timeline and choose the **Set Loop Point** option.
 * To clear the loop point and create a non-looping song, right-click (long-press on mobile) on the bar number of the currently set loop point and choose the **Clear Loop Point** option.

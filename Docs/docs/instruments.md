@@ -12,6 +12,8 @@ On mobile the project explorer is not always visible, and slides from the right 
 
 The project explorer displays parameters in sections that can be expanded and collapsed. Some sections will be collapsed by default, and will need to be expanded to reveal the parameters, especially on mobile where vertical space is limited.
 
+Some items (songs, instruments, generators, effects) will show little re-order grips that can be used to move them up/down in a stack. Also, most item will have context menus that can be accessed by right-clicking desktop or long pressing on mobile. The context menus will contain functionalities to duplicate and copy/paste parameters.
+
 ## Project structure
 
 At the very top of the project explorer is the **Navigation bar**. Much like the folder hierarchy on a computer, it shows the path of the current object in your project. 
@@ -26,14 +28,17 @@ The general structure of a project in KiraStudio is:
 	- Each song contains a series of channel(s)
 		- Each channel (which may any of the [3 types](sequencer.md)) may contain effect(s). 
 - A project also contains zero or more instrument(s)
-	- Each instruments is made of generator(s)
-- A project also contains zero or more samples(s)
+	- Each instruments is made of generator(s) and may contains sample(s)
 
 # Editing the project
 
-The project itself has some basic parameters such as a name and author. The only other one worth mentionning is the **Update Frequency**. This is the frequency at which the app will perform tasks like : advancing the song, update the various forms of automation, advancing the envelopes/sequences, etc. 
+The project is accessed by clicking the first link in the navigation bar.
 
 ![](images/ProjectParams.png#center)
+
+## Project parameters
+
+The project itself has some basic parameters such as a name and author. The only other one worth mentionning is the **Update Frequency**. This is the frequency at which the app will perform tasks like : advancing the song, update the various forms of automation, advancing the envelopes/sequences, etc. 
 
 Lowering the update frequency to something like 50 or 60 Hz can be used to mimic how retro game system only updated their state once per frame (60 FPS on NTSC, 50 FPS on PAL). It can make things sound a bit more uneven and crunchy.
 
@@ -41,13 +46,34 @@ Some things like [sequences](envelopes.md#sequence-editor) and [wavetables](wave
 
 On the technical side, KiraStudio generates all audio in chunks of 32 samples. Things like envelopes and automation curves are only evaluated once every chunk since those are basically assumed to be LFOs. At 48 KHz, which is the sample rate used by the app, this gives a maximum update rate of 48000 / 32 = 1500 Hz. 
 
+## Adding songs
+
+Below the project parameters is the list of songs. When creating a new project it will already contain a song by default, but it can contain more. 
+
+To create a new song, navigate back to the root of your project and click the **(+) Add Song** button. Clicking on a song will show its properties and will make it the active one inside the app.
+
+## Adding instruments
+
+Finally, below the list of songs will be the list of all instruments in the project. 
+
+A new instruments can be created by pressing the **(+) Add Instrument** button. 
+
+## Importing songs & instruments
+
+Both songs and instruments can be imported from other projects. This allows things like merging multiple songs into a single project or using a project as an "instrument library" that you can import instrument from or share with other users. 
+
+When importing songs or instruments from other projects, an important thing to consider is how the app will deal with conflicting instrument names. 
+
+For example, if you already have an instrument named "Piano" and you import an instrument also named "Piano" (or a song using an instrument of that name), you will have to tell the app how to resolve the conflict. 
+
+* You may choose to use the existing piano of the current project and ignore the incoming one
+* You may choose to import the other one under a different name
+
 # Editing songs
 
-When creating a new project it will already contain a song by default, but it can contain more. To create a new song, navigate back to the root of your project and click the **(+) Add Song** button. Clicking on a song will show its properties and will make it the active one inside the app.
+Songs have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a [custom time signature](sequencer.md#custom-time-signatures).
 
 ![](images/SongParameters.png#center)
-
-Songs have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a [custom time signature](sequencer.md#custom-time-signatures).
 
 Also displayed along with the song parameters the the list of channels. Clicking a channel will navigate to its parameters, exactly as if you had clicked on the channel name in the [sequencer](sequencer.md).
 
@@ -90,6 +116,7 @@ The master channel is a special type of effect chain. There is always one in a s
 Besides the standard effect chain parameters, the master channel has 2 unique parameters:
 
 - **BPM** : The main BPM of the song. This value can be automated to create tempo variations.
+- **Tuning** : Frequency (in Hz) of A. The standard, concert pitch, is A = 440 Hz. Can be automated to change the tuning mid-song.
 - **Final DC Removal Frequency (Hz)** : There is a very slight high-pass filter applied on the final output to remove any DC component. Some channels will have their own DC removal feature, but this one is present to avoid clipping when combining asymmetric waveforms. 
 
 The master channel may also contain effect(s), and it works the same way as effect chains. Placing effects on the master channel is actually quite efficient, as this will ensure they are only applied once and keep the CPU usage low. 
