@@ -182,6 +182,7 @@ Besides generators, instruments have a couple noteworthy parameters (besides the
 
 ![](images/InstrumentParams.png#center)
 
+* **Preview Generator Group** : The generator group to trigger when using a MIDI controller or the pop-up piano.
 * **Kill Released Notes After** : Delay after which any released note will be killed. This is more of an emergency feature to prevent badly designed envelopes from running too long. 
 * **Release Mode** : See section below.
 
