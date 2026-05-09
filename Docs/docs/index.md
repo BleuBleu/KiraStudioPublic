@@ -11,7 +11,7 @@ Welcome to the KiraStudio documentation. Please use the __User Guide__ menu abov
 * [Automation Tracks](autotrack.md)
 * [Instruments, Effects and Automating Parameters](projectexplorer.md)
 * [ADSR Envelopes, Custom Curves and Sequences](envelopes.md)
-* [Samples Workfloat](samples.md)
+* [Samples Workflow](samples.md)
 * [WaveTables](wavetables.md)
 * [Generator Reference](generators.md)
 * [Effects Reference](effects.md)
