@@ -20,10 +20,10 @@ To load the SoundFonts in the demo songs:
 	* On Mobile, double-tap on the channel name and the Project Explorer will appear.
 2. In the Project Explorer, under the SoundFont generator settings, look for a red warning sign next to the SoundFont name and click it. 
 3. Locate the requested SoundFont on your device.
+4. Once you fix one channel, it will fix all the other channels using this SoundFont. Also, once you tell KiraStudio where a SoundFont is located, it will remember it forever and not ask you again. 
 
 === "Desktop"
     ![](images/LoadSoundFontDesktop.gif#center)
 === "Mobile"
     ![](images/LoadSoundFontMobile.gif#center)
 
-Once you fix one channel, it will fix all the other channels using this SoundFont. Also, once you tell KiraStudio where a SoundFont is located, it will remember it forever and not ask you again. 
