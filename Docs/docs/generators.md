@@ -134,7 +134,7 @@ A generic sine waveform producing a pure tone with no harmonics, ideal for sub-b
 
 A generic supersaw oscillator with adjustable voice count, detune spread, and blend between center and detuned voices. Can use waveforms beyond a traditional saw.
 
-While this take inspiration from the Roland JP-8000, it is not trying to match its sound in any meaningful way. This generation simply takes the general idea of combining multiple oscillators with some detune and mix settings, something you could also do by using multiple generators on an instrument.
+While this take inspiration from the Roland JP-8000, it is not trying to match its sound in any meaningful way. This generator simply takes the general idea of combining multiple oscillators with some detune and mix settings, something you could also do by using multiple generators on an instrument.
 
 ![](images/GeneratorParams/GeneratorSuperSaw.png#center)
 
