@@ -21,7 +21,7 @@ nav:
 - Change Log:
   - "All Version History": changelog.md
 extra_css:
-  - css/extra.css    
+  - css/extra.css#2    
 extra_javascript:
   - javascript/extra.js
 theme: 

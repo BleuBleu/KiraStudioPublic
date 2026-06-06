@@ -6,10 +6,14 @@ This page provides direct download links to the SoundFonts required to listen to
 
 ### SGM V2.01
 
-This one is required for the **Ruder Buster** and **Cold Brew** demo songs. You can choose between two versions:
+This one is required for the **Ruder Buster** and **Cold Brew** demo songs. <!-- You can choose between two versions: -->
 
-- [SGM V2.01.sf3 (27 MB)](../../soundfonts/SGM V2.01.sf3) : OGG/Vorbis compressed version. Much smaller, fast download directly from this website. Recommended.
+- [SGM V2.01.sf2 (235 MB)](https://archive.org/download/SGM-V2.01) : Download from archive.org is usually very slow.
+
+<!--
+- [SGM V2.01.sf3 (27 MB)](../../soundfonts/SGM-V2.01.sf3) : OGG/Vorbis compressed version. Much smaller, fast download directly from this website. Recommended.
 - [SGM V2.01.sf2 (235 MB)](https://archive.org/download/SGM-V2.01) : Original version. Slightly higher quality, but much larger. Download from archive.org is usually very slow.
+-->
 
 ## Loading the SoundFonts in the Demo Songs
 	
