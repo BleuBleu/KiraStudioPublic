@@ -2,6 +2,15 @@
 
 Version history / release notes for each release. 
 
+## Version 1.0.7
+
+Fixes:
+
+* Fixed crash doing undo/redo after editing different types of ADSR envelopes
+* Fixed crash when simultaneously playing and resizing the pop-up piano on IOS
+* Fixed MIDI export not exporting the last channel
+* Fixed Delay effect misbehaving when set to 0ms
+
 ## Version 1.0.6
 
 Fixes:
