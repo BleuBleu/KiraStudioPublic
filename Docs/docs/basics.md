@@ -20,7 +20,7 @@ If you are working on a trackpad, please check out how to enable [Trackpad contr
 
 On mobile, there are 4 main gestures used:
 
-* A **Quick Tap** will usually add stuff such as pattern, notes or vertices on a curve. 
+* A **Quick Tap** will usually add stuff such as patterns, notes, or vertices on a curve. 
 * A **Swipe** will pan the viewport around.
 * A **Pinch** will zoom the viewport in/out.
 * A **Long Press** on something will reveal advanced options or start a rectangular selection. In some cases where multiple actions are available (ex: selection + contextual menu), a pulsing circle will appears to give you a choice.
@@ -56,7 +56,7 @@ By default, the app clears the undo/redo stack when saving a project. This is do
 
 # Sliders
 
-Unlike other audio apps that like to use various knobs for numeric parameters, KiraStudio relies entirely on sliders. You will find them all over the app and they are also through them that you will [automate various parameters](projectexplorer.md#automating-parameters). 
+Unlike other audio apps that like to use various knobs for numeric parameters, KiraStudio relies entirely on sliders. You will find them all over the app, and through them you will be able to [automate various parameters](projectexplorer.md#automating-parameters). 
 
 These sliders have a few features that may not be immediately apparent.
 
@@ -72,9 +72,9 @@ In the animation below, you can see that at first, the slider moves 1:1 with the
 
 ## Text input
 
-On desktop, you type-in values in widgets like textboxes and sliders. For textbox, just clicking on them with switch to keyboard input, but on sliders you will need to **Double-Click**. 
+On desktop, you can type values into widgets like textboxes and sliders. For textboxes, just clicking on them will switch to keyboard input, but on sliders you will need to **Double-Click**. 
 
-Moreover, using the **Tab** key will always just to the next widget supporting text input in the current view. If you are not already inputting text, it will jump to the first widget that can receive text. 
+Moreover, using the **Tab** key will always jump to the next widget supporting text input in the current view. If you are not already inputting text, it will jump to the first widget that can receive text. 
 
 This allows quickly jumping between sliders as shown in the animation below.
 
