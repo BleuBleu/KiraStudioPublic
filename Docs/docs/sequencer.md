@@ -139,9 +139,9 @@ Another way to tell if a pattern is an instance of another is simply to select i
 
 ![](images/Instance.png#center)
 
-To create an instance of an existing pattern, simply select it and drag from the little **Colored Chain-Link Button** that appears at the bottom left, and release where you want to create the instance. Note that trying to create an instance on a different track will force a copy.
+To create an instance of an existing pattern, simply select it and drag from the little **Colored Chain-Link Button** that appears at the bottom left, and release where you want to create the instance. Note that trying to create an instance on a different track will force a copy. Alternatively, on desktop, you can create an instance of a pattern by first dragging it then holding **Ctrl**.
 
-To create a completely separate copy of a pattern that retains no connection to the original, simply drag from the **Colored Paperstack Icon** that appears and release it where you want to create the copy.
+To create a completely separate copy of a pattern that retains no connection to the original, simply drag from the **Colored Paperstack Icon** that appears and release it where you want to create the copy. On desktop, the same can be achieve by dragging a pattern, then holding the **Shift** key during the drag.
 
 === "Desktop"
     ![](images/InstanceCopyPatternsDesktop.gif#center)

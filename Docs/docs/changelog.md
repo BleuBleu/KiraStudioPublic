@@ -2,8 +2,21 @@
 
 Version history / release notes for each release. 
 
-## Version 1.1.0
+## Version 1.1.1
 
+Changes:
+
+* Added the frequency response diagram to the generator filters
+
+Fixes:
+
+* Fixed some soundfonts sounding out of tune
+* Fixed some keyboard shortcuts not working anymore
+* Fixed piano roll floating toolbar closing when resizing the piano roll on tablets
+* Fixed slide notes editing when selecting notes accross multiple instances of the same pattern
+* Fixed crash opening files from storage on IOS
+
+## Version 1.1.0
 
 ![](releases/110/110.png#center)
 
