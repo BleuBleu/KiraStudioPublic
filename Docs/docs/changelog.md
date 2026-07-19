@@ -18,7 +18,9 @@ Fixes:
 
 ## Version 1.1.0
 
-![](releases/110/110.png#center)
+This is a major release, please visit the [release highlight](releases/110.md) page for a breakdown of the most important changes.
+
+[![](releases/110/110.png#center)](releases/110.md)
 
 Changes:
 
