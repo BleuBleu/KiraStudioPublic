@@ -2,6 +2,69 @@
 
 Version history / release notes for each release. 
 
+## Version 1.1.1
+
+Changes:
+
+* Added the frequency response diagram to the generator filters
+
+Fixes:
+
+* Fixed some soundfonts sounding out of tune
+* Fixed some keyboard shortcuts not working anymore
+* Fixed piano roll floating toolbar closing when resizing the piano roll on tablets
+* Fixed slide notes editing when selecting notes accross multiple instances of the same pattern
+* Fixed crash opening files from storage on IOS
+
+## Version 1.1.0
+
+This is a major release, please visit the [release highlight](releases/110.md) page for a breakdown of the most important changes.
+
+[![](releases/110/110.png#center)](releases/110.md)
+
+Changes:
+
+* Introduced the CloudSeed reverb effect
+* Introduced a Compressor with optional side-chain support
+* Introduced a Distortion effect
+* Introduced a SuperSaw generator
+* Introduced a generic noise generator
+* Added dedicated filters to all generic generators
+* Expanded ADSR envelope support to most parameters (no longer limited to 0–100% ranges)
+* Added support for custom tuning (A not 440 Hz), fully automatable
+* Added 16-bit WAV export option
+* Channels can now be exported as separate audio files
+* The note parameter editor in the piano roll is now resizable
+* Added MIDI controller input support on mobile
+* Added velocity support for MIDI controller input
+* Most objects (songs, instruments, channels, tracks, effects, generators) can now be duplicated
+* Improved multi-selection: hold CTRL to add to selection across most views
+* On mobile, long-press "Del" in the 8-bit Calculator to clear the expression
+* Patterns can now be merged into larger ones using the option from the context menu
+* Added mixdown and L/R swap options to the Pan effect
+* Generators and effects can now be muted individually
+* Added scale highlighting to the piano roll
+* Delay effect now supports quarter-note units, smooth delay time automation has been fixed
+* Songs and instruments can now be imported from other projects
+* Added sorting and filtering to the sound font preset list
+* Added a progress bar during project and sound font loading to prevent freezes/crashes on some mobile devices
+* Added a temporary loop section in the sequencer
+* Added basic support for generator groups with arpeggios (switching groups stops previous arpeggiated notes)
+* Added BPM and time signature indicators to the toolbar, along with general UI improvements
+* Added a preview generator group on instruments
+* The first loop of the SMPL chunk in wave files is now imported
+* Multiple parameter curves can now be edited simultaneously (other curves will match the edited one)
+* Pressing the playhead play button now correctly starts playback
+* MIDI export now exports velocity and slide notes, but pitch bend will affect all playing notes
+* More complete online documentation
+* Performance improvements on all platforms
+* Added Spanish translation (thanks LagMage!)
+
+Breaking/Behavior Changes:
+
+* Samples have been moved from the project to the instruments. This conversion will be done automatically when opening older projects, duplicating samples if needed. Samples that were loaded but unused by any instruments will be discarded.
+* The "transpose" parameter will no longer be rounded to an integer and can now smoothly glide between notes. 
+
 ## Version 1.0.7
 
 Fixes:

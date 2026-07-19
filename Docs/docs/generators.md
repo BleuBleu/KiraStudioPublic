@@ -150,7 +150,7 @@ While this take inspiration from the Roland JP-8000, it is not trying to match i
 
 A generic 2/3/4-operator FM synth inspired by classic Yamaha chips, offering more control over algorithms, modulation, and custom operator waveforms beyond simple sines for deep sound design.
 
-This section will not try to explain the concept of FM synthesis here, I will refer you to this fantastic video by Andrew Huang which summarizes the idea in unreal 4 minutes. 
+This section will not try to explain the concept of FM synthesis here, I will refer you to this fantastic video by Andrew Huang which summarizes the idea in only 4 minutes. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vvBl3YUBUyY?si=y36fsscdkvlV9Fqz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 90%; aspect-ratio: 16/9; display: block; margin: 0 auto;"></iframe>
 
