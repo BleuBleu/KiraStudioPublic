@@ -2,6 +2,25 @@
 
 Version history / release notes for each release. 
 
+## Version 1.1.2
+
+Fixes:
+
+* Fixed issues with compressor effect when the side-chain channel was located below the channel using the compressor
+* Fixed crash when trying to open a file with an unrecognized extension
+* Fixed parsing of MIDI files containing system exclusive messages
+* Fixed filters not working on wavetable generator
+* Fixed import of stereo samples being twice as long as they should and padded with zeroes
+* Fixed sample rate conversion when importing samples with rate higher than 48KHz
+* Fixed release point on custom curves constantly coming back on undo/redo
+* Fixed crackling audio when using generic FM generators in projects using low update frequencies
+* Fixed some soundfont samples unintentionally being but short
+* Fixed effect chain colors not being updated in mixer view
+* Fixed SuperSaw generator breaking when using 3 oscillators and 100% mix/falloff
+* Slightly reduce memory usage when exporting audio (still pretty bad in most cases)
+* Improved consistency of parameters in the floating toolbar when editing 1-bit DPCM samples 
+* Improved parsing of MIDI file containing quantization errors, such as notes OFF -> ON on the same tick
+
 ## Version 1.1.1
 
 Changes:
