@@ -20,6 +20,7 @@ nav:
   - "Demo Song SoundFonts": soundfonts.md
 - Change Log:
   - "All Version History": changelog.md
+  - "KiraStudio 1.1.0 Highlights": releases/110.md
 extra_css:
   - css/extra.css#2    
 extra_javascript:

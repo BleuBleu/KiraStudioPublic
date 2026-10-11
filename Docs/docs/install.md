@@ -2,7 +2,7 @@
 
 ## System requirements
 
-For all 3 desktop platforms, FamiStudio requires the following software/hardware environment:
+For all 3 desktop platforms, KiraStudio requires the following software/hardware environment:
 
 * Windows 8 (64-bit) or newer
 * MacOS 10.15 "Catalina" or newer

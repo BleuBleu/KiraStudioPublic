@@ -1,13 +1,13 @@
 # Automation Track Editor
 
-The **Automation Track Editor** is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.
+The **Automation Track Editor** is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter over the course of a song. The controlled parameter typically belongs to an instrument or an effect of the parent channel.
 
 To learn how to create an automation track for a given parameter, please refer to [this section](projectexplorer.md#automating-parameters).
 
 The automation track editor is made of a few components:
 
 * On the left is the **Scale**, which shows the horizontal grid values.
-* On the top is the **Timeline**, which display the beats in a `Bar.Beat` format and the pattern names/colors.
+* On the top is the **Timeline**, which displays the beats in a `Bar.Beat` format and the pattern names/colors.
 * In the middle is the editor itself where curves are edited, and...
 * In the top-right corner is the **Floating Toolbar**, which contains various snapping and view options.
 
@@ -17,7 +17,7 @@ The automation track editor is made of a few components:
 
 This next section will focus on curve editing. 
 
-Curves are either smooth (interpolated) or not. Uninterpolated curves will switch values abruptly, which may be desirable for some types of parameters. As of version 1.0, there is no way to mix smooth and non-smooth segments.
+Curves are either smooth (interpolated) or discrete (uninterpolated). Uninterpolated curves will switch values abruptly, which may be desirable for some types of parameters. As of version 1.0, there is no way to mix smooth and non-smooth segments. 
 
 As seen in the image above, vertices belonging to the same pattern will be connected by a solid line, while vertices between different patterns won't show a line. This is simply a visual cue to help you differentiate the lines you have intentionally drawn, and the ones the app is implicitly adding between patterns.
 
@@ -25,7 +25,7 @@ As seen in the image above, vertices belonging to the same pattern will be conne
 
 Adding vertices is done with a single click. On desktop, you can keep holding the mouse button to fine-tune its position until you release. 
 
-Deleting a single vertex can be done by double-clicking. To deleting the entire selection simply press **Del** on desktop, or use the **Delete (X)** button on the toolbar on mobile.
+Deleting a single vertex can be done by double-clicking. To delete an entire selection, simply press **Del** on desktop, or use the **Delete (X)** button on the toolbar on mobile.
 
 ## Selecting vertices
 
@@ -40,7 +40,7 @@ This is very similar to how selection works in the [piano roll](pianoroll.md#sel
 
 ## Moving vertices
 
-To move vertices, simply click and drag. When starting a drag from a selected vertex, all the selected vertices will move together.
+To move vertices, simply click and drag. If multiple vertecies are selected, all the selected vertices will move together.
 
 On desktop, you can also move vertices using the arrow keys. Pressing up/down will move them by 1 major grid increment. Pressing left/right will move by the amount of snapping precision currently selected.
 
@@ -50,12 +50,12 @@ While dragging vertices, you can duplicate the current selection by pressing and
 
 ## Copy and pasting vertices
 
-This works exactly as in the [piano roll](pianoroll.md#copy-and-pasting-notes).
+This behaves exactly like the [piano roll](pianoroll.md#copy-and-pasting-notes).
 
 ## Snapping to beats
 
-This works exactly as in the [piano roll](pianoroll.md#snapping-to-beats).
+This behaves exactly like the [piano roll](pianoroll.md#snapping-to-beats).
 
 ## Changing the zoom level
 
-This works exactly as in the [piano roll](pianoroll.md#changing-the-zoom-level). The only difference is that to zoom vertically, you need to mouse wheel (or pinch using trackpad controls) on the scale to the left.
+This behaves almost exactly like the [piano roll](pianoroll.md#changing-the-zoom-level). The only difference is that to zoom vertically, you need to scroll using the mouse wheel (or pinch using trackpad controls) on the scale to the left.

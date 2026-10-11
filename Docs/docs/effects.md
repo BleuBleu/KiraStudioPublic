@@ -111,7 +111,7 @@ Automation of the delay amount (seconds or quarter notes) is possible, but can c
 
 * **Mode** : Various delaying mode supporting both mono and stereo. Ping-pong makes the audio continuously bounce from L/R, while cross swaps L/R.
 * **Wet/Dry Mix** : Ratio of the delayed to dry signal to mix in.
-* **Units** : The units to use for the delay amount, can be seconds or quarter notes, to more easily sync up with the song.
+* **Units** : The units to use for the delay amount, can be seconds or quarter notes, to more easily sync up with the song. When using quarter notes, you are still limited to a maximum of 1 second of delay.
 * **Delay** : The delay amount, in the unit chosen.
 * **Feedback** : Controls how much delayed signal is re-fed into the delay, affecting echo repetitions and decay length.
 * **Filter** : Optional filter to apply to the delayed echoes.
